@@ -1,6 +1,7 @@
 import mainOne from "./main-restaurante.jpg";
 import mainTwo from "./main2-restaurante.jpg";
 import logo from "./logo-restaurante.jpg";
+import cafe from "./coffe.jpg";
 
 export function createImg(src, alt = "", clss = ""){
     let img = new Image();
@@ -11,18 +12,29 @@ export function createImg(src, alt = "", clss = ""){
 };
 
 export function pagueLoadMainContent(){
-    let p = document.createElement("p");
-    p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi asperiores nesciunt quod! Odio sapiente tenetur iste molestias dolores, inventore placeat accusantium quibusdam mollitia quo dignissimos, doloremque perspiciatis totam. Ipsum, soluta.";
-    p.classList.add("content__maintext")
+    let div = document.createElement("div");
+    div.classList.add("maincontent");
 
-    let logoImg = createImg(logo, "Café Hormiga Logo", "page-logo");
-    let mainImgOne = createImg(mainOne, "Café La Hormiga #1", "mainImg");
-    let mainImgTwo = createImg(mainTwo, "Café La Hormiga #2", "mainImg");
+    let btnMenu = document.createElement("button");
+    let p = document.createElement("p");
+    let subTitle =  document.createElement("h2");
+
+    subTitle.textContent = "Coffe";
+    subTitle.classList.add("maintitle");
+    p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi asperiores nesciunt quod! Odio sapiente tenetur iste molestias dolores, inventore placeat accusantium quibusdam mollitia quo dignissimos, doloremque perspiciatis totam. Ipsum, soluta.";
+    p.classList.add("maintext")
+    btnMenu.classList.add("mainbtn");
+    btnMenu.type = "button";
+    btnMenu.textContent = "Menú"
+    div.appendChild(subTitle);
+    div.appendChild(p)
+    div.appendChild(btnMenu)
+
+    let cafeImg = createImg(cafe, "Café", "mainImg");
     
     const fragment = document.createDocumentFragment();
-    fragment.appendChild(p);
-    fragment.appendChild(logoImg);
-    fragment.appendChild(mainImgTwo);
+    fragment.appendChild(div);
+    fragment.appendChild(cafeImg);
 
     const content = document.querySelector("#content");
     content.appendChild(fragment);
