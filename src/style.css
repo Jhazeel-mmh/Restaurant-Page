@@ -119,11 +119,12 @@ nav > button:hover {
     padding: 1rem;
     color: var(--clr-neutral-100);
     font-weight: var(--fw-bold);
-    transition: transform 1s ease;
+    transition: transform 1s ease, font-size 1s ease;
 }
 
 .mainbtn:hover {
     transform: scale(1.1);
+    font-size: calc(var(--fs-300 ) * 1.1);
 }
  
 footer {
