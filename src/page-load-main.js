@@ -1,6 +1,3 @@
-import mainOne from "./main-restaurante.jpg";
-import mainTwo from "./main2-restaurante.jpg";
-import logo from "./logo-restaurante.jpg";
 import cafe from "./coffe.jpg";
 
 export function createImg(src, alt = "", clss = ""){
