@@ -1,5 +1,5 @@
 import "./style.css";
-import { pagueLoadMainContent } from "./pague-load-mainContent.js";
+import { pagueLoadMainContent } from "./page-load-main.js";
 
 pagueLoadMainContent();
 console.log("Bienvenidos a la hormiga");
