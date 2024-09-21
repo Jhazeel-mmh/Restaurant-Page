@@ -1,6 +1,7 @@
 import "./normalize.css";
 import "./style.css";
 import { pagueLoadMainContent } from "./page-load-main.js";
+import { loadMenuContent } from "./page-load-menu.js";
 
 pagueLoadMainContent();
 console.log("Bienvenidos al cafe");
@@ -21,10 +22,36 @@ function setNavItemActive(e, fixedId = ""){
     $(`#${navItemId}`).classList.add("nav-item-selected");
 }
 
+function loadSpecificPage(e, fixedPageName = "menu"){
+    let content = $("#content");
+    content.textContent = "";
+    let pageName;
+
+    (e) ? pageName = e.target.id : pageName = fixedPageName;
+
+    switch (pageName) {
+        case "home":
+            pagueLoadMainContent();
+            break;
+        case "menu":
+            loadMenuContent();
+            break;
+        case "about":
+            // loadAboutContent();
+            break;
+        default:
+            break;
+    }
+};
+
 nav.addEventListener("click", e => {
     if (!e.target.classList.contains("nav-item")) return;
     setNavItemActive(e);
+    loadSpecificPage(e);
 });
 
-mainBtnToMenu.addEventListener("click", () => setNavItemActive(null, "menu"));
+mainBtnToMenu.addEventListener("click", () => {
+    setNavItemActive(null, "menu");
+    loadSpecificPage(null);
+});
 

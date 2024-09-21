@@ -19,3 +19,17 @@ function createMenuItem(titleFood, img, description){
     div.appendChild(img);
     return div;
 }
+
+export function loadMenuContent(){
+    const content = document.querySelector("#content");
+    let fragment = document.createDocumentFragment();
+    let div = document.createElement("div");
+    div.classList.add("menu-container");
+    for (let i = 0; i < 4; i++){
+        let img = createImg(imgSrcMenu, "Cafe XXXX", "menu-item__img");
+        let menuItem = createMenuItem("Café", img, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi asperiores nesciunt quod!")
+        fragment.appendChild(menuItem)  
+    }
+    div.appendChild(fragment);
+    content.appendChild(div);
+}
