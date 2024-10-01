@@ -150,7 +150,8 @@ nav > button:hover {
     gap: 0.7rem;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.5s ease;
+    transition: transform 1s ease;
+    border-radius: 1rem;
 }
 
 .menu-item:hover {
@@ -169,7 +170,7 @@ nav > button:hover {
 
 .menu-item__img {
     width: 300px;
-    height: 300px;
+    height: 250px;
 }
 
 
