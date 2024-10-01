@@ -25,7 +25,7 @@ export function loadMenuContent(){
     let fragment = document.createDocumentFragment();
     let div = document.createElement("div");
     div.classList.add("menu-container");
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 10; i++){
         let img = createImg(imgSrcMenu, "Cafe XXXX", "menu-item__img");
         let menuItem = createMenuItem("Café", img, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi asperiores nesciunt quod!")
         fragment.appendChild(menuItem)  
