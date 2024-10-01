@@ -2,6 +2,7 @@ import "./normalize.css";
 import "./style.css";
 import { pagueLoadMainContent } from "./page-load-main.js";
 import { loadMenuContent } from "./page-load-menu.js";
+import { loadAboutContent } from "./page-load-about.js";
 
 pagueLoadMainContent();
 console.log("Bienvenidos al cafe");
@@ -37,7 +38,7 @@ function loadSpecificPage(e, fixedPageName = "menu"){
             loadMenuContent();
             break;
         case "about":
-            // loadAboutContent();
+            loadAboutContent();
             break;
         default:
             break;
