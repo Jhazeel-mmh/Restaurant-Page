@@ -193,10 +193,11 @@ footer p > a {
     height: 100%;
     grid-area: 1 / 1 / -1 / -1;
     display: grid;
-    grid-template: repeat(3, 150px) / repeat(2, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     background-color: var(--clr-primary-500);
     padding: 3rem;
     border-radius: 1rem;
+    column-gap: 3rem;
 }
 
 .about-us {
@@ -209,4 +210,47 @@ footer p > a {
 
 .direction {
     grid-area: 3 / 1 / 4 / 2;
+}
+
+.about-container form {
+    grid-area: 1 / 2 / 3 / 3;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+form input, form textarea {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+}
+
+form p {
+    width: 100%;
+    display: flex;
+}
+
+form p > * {
+    flex: 1;
+}
+
+input[type=submit] {
+    background-color: var(--clr-primary-700);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    transition: transform 1s ease, font-size 1s ease;
+}
+input[type=submit]:hover {
+    transform: scale(1.1);
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
 }
